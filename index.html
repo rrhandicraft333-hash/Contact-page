@@ -177,6 +177,67 @@
             color: #4f46e5;
         }
         
+        /* Map Section Styles - ADDED */
+        .map-section {
+            padding: 25px 30px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        
+        .map-section h3 {
+            font-size: 18px;
+            color: #334155;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .map-section h3 i {
+            color: #4f46e5;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .map-container {
+            height: 200px;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 15px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .map-details {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .map-details p {
+            font-size: 14px;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0;
+        }
+        
+        .map-details i {
+            color: #4f46e5;
+            margin-right: 8px;
+            font-size: 16px;
+            min-width: 20px;
+        }
+        
         .footer {
             text-align: center;
             padding: 20px;
@@ -212,6 +273,14 @@
             .contact-item {
                 padding: 15px;
             }
+            
+            .map-section {
+                padding: 20px;
+            }
+            
+            .map-container {
+                height: 180px;
+            }
         }
         
         /* Animation for contact items */
@@ -246,13 +315,13 @@
                 <i class="fas fa-address-card"></i>
             </div>
             <h1>RR. Handicraft</h1>
-             <h1>Contact Directory</h1>
+            <h1>Contact Directory</h1>
             <p>Connect with us through any platform</p>
         </div>
         
         <div class="contact-links">
             <!-- Facebook -->
-            <div class="contact-item" onclick="window.open('https://facebook.com/yourprofile', '_blank')">
+            <div class="contact-item" onclick="window.open('https://www.facebook.com/rajan.pandey.7315720', '_blank')">
                 <div class="contact-icon facebook-bg">
                     <i class="fab fa-facebook-f"></i>
                 </div>
@@ -336,8 +405,27 @@
             </div>
         </div>
         
+        <!-- MAP SECTION ADDED HERE -->
+        <div class="map-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Visit Our Store</h3>
+            <div class="map-container">
+                <iframe 
+                    class="map-frame"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0614083521004!2d85.3123293!3d27.7153902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19018eb12685%3A0x41ad6c81acc3e2ac!2sR%20R%20Handicraft!5e0!3m2!1sen!2snp!4v1768499583834!5m2!1sen!2snp" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-details">
+                <p><i class="fas fa-location-dot"></i> R R Handicraft, Kathmandu, Nepal</p>
+                <p><i class="fas fa-phone"></i> +977 9766866598</p>
+                <p><i class="fas fa-clock"></i> Open: All day, 7:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+        
         <div class="footer">
-            <p>© 2026 Contact Directory. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            <p>© 2026 RR Handicraft. All rights reserved. | <a href="#">Privacy Policy</a></p>
         </div>
     </div>
 
@@ -361,9 +449,18 @@
                 card.style.transform = 'translateY(0)';
             }, 1500);
         }, 3000);
+        
+        // Map fallback in case iframe doesn't load
+        const mapFrame = document.querySelector('.map-frame');
+        mapFrame.onerror = function() {
+            const mapContainer = document.querySelector('.map-container');
+            mapContainer.innerHTML = 
+                '<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#e2e8f0; color:#64748b; padding:20px; text-align:center;">' +
+                '<i class="fas fa-map" style="font-size:40px; margin-bottom:10px; color:#94a3b8;"></i>' +
+                '<p>Map Loading...</p>' +
+                '<p style="font-size:12px; margin-top:5px;">R R Handicraft, Kathmandu</p>' +
+                '</div>';
+        };
     </script>
 </body>
-
 </html>
-
-
