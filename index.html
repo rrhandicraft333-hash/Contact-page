@@ -3,463 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Card Directory</title>
+    <title>RR. Handicraft | Official Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 45%, #b38728 70%, #fbf5b7 100%);
+            --deep-black: #050505;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --gold-border: rgba(191, 149, 63, 0.4);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-        
+
         body {
+            background-color: var(--deep-black);
+            background-image: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             padding: 20px;
+            color: #ffffff;
         }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 24px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+        /* Card Container */
+        .lux-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--gold-border);
+            border-radius: 30px;
             width: 100%;
             max-width: 450px;
             overflow: hidden;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
             position: relative;
-            transition: transform 0.3s ease;
         }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        
+
+        /* Header */
         .card-header {
-            background: linear-gradient(to right, #4f46e5, #7c3aed);
-            color: white;
-            padding: 30px;
+            padding: 40px 20px 30px;
             text-align: center;
-            position: relative;
+            border-bottom: 1px solid var(--gold-border);
         }
-        
-        .card-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-            background-size: cover;
-            opacity: 0.2;
-        }
-        
-        .card-header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            position: relative;
-        }
-        
-        .card-header p {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.9;
-            position: relative;
-        }
-        
-        .profile-icon {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .profile-icon i {
-            font-size: 48px;
-            background: linear-gradient(to right, #4f46e5, #7c3aed);
+
+        .crown-icon {
+            font-size: 40px;
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            display: inline-block;
         }
-        
-        .contact-links {
-            padding: 30px;
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
-        
-        .contact-item {
+
+        .tagline {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Contact Items */
+        .contact-list {
+            padding: 25px;
+        }
+
+        .contact-link {
             display: flex;
             align-items: center;
-            background: #f8fafc;
-            margin-bottom: 18px;
-            padding: 18px 20px;
-            border-radius: 16px;
-            cursor: pointer;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            text-decoration: none;
+            margin-bottom: 15px;
             transition: all 0.3s ease;
-            border: 1px solid #e2e8f0;
         }
-        
-        .contact-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            background: white;
+
+        .contact-link:hover {
+            background: rgba(191, 149, 63, 0.15);
+            border-color: #bf953f;
+            transform: translateY(-3px);
         }
-        
-        .contact-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
+
+        .icon-circle {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 18px;
-            font-size: 24px;
-            color: white;
-        }
-        
-        .facebook-bg {
-            background: linear-gradient(135deg, #1877f2, #0d5cb6);
-        }
-        
-        .instagram-bg {
-            background: linear-gradient(135deg, #e4405f, #c13584);
-        }
-        
-        .whatsapp-bg {
-            background: linear-gradient(135deg, #25d366, #128c7e);
-        }
-        
-        .wechat-bg {
-            background: linear-gradient(135deg, #09b83e, #07a23b);
-        }
-        
-        .email-bg {
-            background: linear-gradient(135deg, #ea4335, #d93025);
-        }
-        
-        .website-bg {
-            background: linear-gradient(135deg, #4285f4, #0d47a1);
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-info h3 {
-            font-size: 16px;
-            font-weight: 600;
-            color: #334155;
-            margin-bottom: 4px;
-        }
-        
-        .contact-info p {
-            font-size: 14px;
-            color: #64748b;
-            font-weight: 400;
-        }
-        
-        .contact-arrow {
-            color: #94a3b8;
+            color: #000;
             font-size: 20px;
-            transition: transform 0.3s ease;
+            margin-right: 15px;
         }
-        
-        .contact-item:hover .contact-arrow {
-            transform: translateX(5px);
-            color: #4f46e5;
+
+        .link-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fcf6ba;
         }
-        
-        /* Map Section Styles - ADDED */
+
+        .link-info p {
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Map Section */
         .map-section {
-            padding: 25px 30px;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            background: #f8fafc;
+            padding: 0 25px 25px;
         }
-        
-        .map-section h3 {
-            font-size: 18px;
-            color: #334155;
+
+        .map-title {
+            font-size: 16px;
+            color: #fcf6ba;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            font-weight: 600;
+            gap: 10px;
         }
-        
-        .map-section h3 i {
-            color: #4f46e5;
-            margin-right: 10px;
-            font-size: 20px;
-        }
-        
-        .map-container {
+
+        #map-box {
             height: 200px;
             width: 100%;
-            border-radius: 12px;
+            border-radius: 20px;
+            border: 2px solid var(--gold-border);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            margin-bottom: 15px;
-            border: 1px solid #e2e8f0;
+            background: #222;
         }
-        
-        .map-frame {
-            width: 100%;
-            height: 100%;
-            border: 0;
+
+        .store-details {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #ccc;
         }
-        
-        .map-details {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .map-details p {
-            font-size: 14px;
-            color: #64748b;
+
+        .store-details p {
             display: flex;
             align-items: center;
-            margin-bottom: 0;
+            margin-bottom: 8px;
         }
-        
-        .map-details i {
-            color: #4f46e5;
-            margin-right: 8px;
-            font-size: 16px;
-            min-width: 20px;
+
+        .store-details i {
+            color: #bf953f;
+            margin-right: 10px;
+            width: 15px;
         }
-        
+
         .footer {
             text-align: center;
             padding: 20px;
-            color: #64748b;
-            font-size: 14px;
-            border-top: 1px solid #e2e8f0;
-            background: #f8fafc;
+            font-size: 11px;
+            color: #555;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            letter-spacing: 1px;
         }
-        
-        .footer a {
-            color: #4f46e5;
-            text-decoration: none;
-            font-weight: 500;
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        @media (max-width: 480px) {
-            .contact-card {
-                border-radius: 20px;
-            }
-            
-            .card-header {
-                padding: 25px 20px;
-            }
-            
-            .card-header h1 {
-                font-size: 24px;
-            }
-            
-            .contact-links {
-                padding: 25px 20px;
-            }
-            
-            .contact-item {
-                padding: 15px;
-            }
-            
-            .map-section {
-                padding: 20px;
-            }
-            
-            .map-container {
-                height: 180px;
-            }
+
+        .contact-link {
+            animation: fadeIn 0.5s ease forwards;
         }
-        
-        /* Animation for contact items */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .contact-item {
-            animation: fadeInUp 0.5s ease forwards;
-            opacity: 0;
-        }
-        
-        .contact-item:nth-child(1) { animation-delay: 0.1s; }
-        .contact-item:nth-child(2) { animation-delay: 0.2s; }
-        .contact-item:nth-child(3) { animation-delay: 0.3s; }
-        .contact-item:nth-child(4) { animation-delay: 0.4s; }
-        .contact-item:nth-child(5) { animation-delay: 0.5s; }
-        .contact-item:nth-child(6) { animation-delay: 0.6s; }
     </style>
 </head>
 <body>
-    <div class="contact-card">
+
+    <div class="lux-card">
         <div class="card-header">
-            <div class="profile-icon">
-                <i class="fas fa-address-card"></i>
-            </div>
+            <div class="crown-icon"><i class="fas fa-crown"></i></div>
             <h1>RR. Handicraft</h1>
-            <h1>Contact Directory</h1>
-            <p>Connect with us through any platform</p>
+            <p class="tagline">Traditional Handmade Craft.</p>
         </div>
-        
-        <div class="contact-links">
-            <!-- Facebook -->
-            <div class="contact-item" onclick="window.open('https://www.facebook.com/rajan.pandey.7315720', '_blank')">
-                <div class="contact-icon facebook-bg">
-                    <i class="fab fa-facebook-f"></i>
-                </div>
-                <div class="contact-info">
-                    <h3>Facebook</h3>
-                    <p>Connect with us on Facebook</p>
-                </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            
-            <!-- Instagram -->
-            <div class="contact-item" onclick="window.open('https://www.instagram.com/r.r_handicraft?igsh=MXVtbG1wam45czlldA%3D%3D&utm_source=qr', '_blank')">
-                <div class="contact-icon instagram-bg">
-                    <i class="fab fa-instagram"></i>
-                </div>
-                <div class="contact-info">
+
+        <div class="contact-list">
+            <a href="https://www.instagram.com/r.r_handicraft" class="contact-link" target="_blank">
+                <div class="icon-circle"><i class="fab fa-instagram"></i></div>
+                <div class="link-info">
                     <h3>Instagram</h3>
-                    <p>Follow our latest updates</p>
+                    <p>View our latest collection</p>
                 </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            
-            <!-- WhatsApp -->
-            <div class="contact-item" onclick="window.open('https://api.whatsapp.com/send/?phone=9766866598&text&type=phone_number&app_absent=0', '_blank')">
-                <div class="contact-icon whatsapp-bg">
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="contact-info">
+            </a>
+
+            <a href="https://wa.me/9779766866598" class="contact-link" target="_blank">
+                <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                <div class="link-info">
                     <h3>WhatsApp</h3>
-                    <p>Message us directly</p>
+                    <p>Message us for inquiries</p>
                 </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
+            </a>
+
+            <a href="mailto:rrhandicraft333@gmail.com" class="contact-link">
+                <div class="icon-circle"><i class="fas fa-envelope"></i></div>
+                <div class="link-info">
+                    <h3>Email Address</h3>
+                    <p>rrhandicraft333@gmail.com</p>
                 </div>
-            </div>
-            
-            <!-- WeChat -->
-            <div class="contact-item" onclick="window.open('https://u.wechat.com/kJM7Fs3OmohDset_rREeH3Y?s=2', '_blank')">
-                <div class="contact-icon wechat-bg">
-                    <i class="fab fa-weixin"></i>
+            </a>
+
+            <a href="https://rrhandicrafts.com" class="contact-link" target="_blank">
+                <div class="icon-circle"><i class="fas fa-globe"></i></div>
+                <div class="link-info">
+                    <h3>Official Website</h3>
+                    <p>Explore handicrafts online</p>
                 </div>
-                <div class="contact-info">
-                    <h3>WeChat</h3>
-                    <p>Connect with us on WeChat</p>
-                </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            
-            <!-- Email -->
-            <div class="contact-item" onclick="window.location.href='mailto:info@rrhandicrafts.com'">
-                <div class="contact-icon email-bg">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="contact-info">
-                    <h3>Email</h3>
-                    <p>info@rrhandicrafts.com</p>
-                </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            
-            <!-- Website -->
-            <div class="contact-item" onclick="window.open('https://rrhandicrafts.com', '_blank')">
-                <div class="contact-icon website-bg">
-                    <i class="fas fa-globe"></i>
-                </div>
-                <div class="contact-info">
-                    <h3>Website</h3>
-                    <p>Visit our official website</p>
-                </div>
-                <div class="contact-arrow">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
+            </a>
         </div>
-        
-        <!-- MAP SECTION ADDED HERE -->
+
         <div class="map-section">
-            <h3><i class="fas fa-map-marker-alt"></i> Visit Our Store</h3>
-            <div class="map-container">
-                <iframe 
-                    class="map-frame"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0614083521004!2d85.3123293!3d27.7153902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19018eb12685%3A0x41ad6c81acc3e2ac!2sR%20R%20Handicraft!5e0!3m2!1sen!2snp!4v1768499583834!5m2!1sen!2snp" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-            <div class="map-details">
-                <p><i class="fas fa-location-dot"></i> R R Handicraft, Kathmandu, Nepal</p>
-                <p><i class="fas fa-phone"></i> +977 9766866598</p>
-                <p><i class="fas fa-clock"></i> Open: All day, 7:00 AM - 10:00 PM</p>
+            <div class="map-title"><i class="fas fa-map-marker-alt"></i> Our Location</div>
+            <div id="map-box">
+                </div>
+            <div class="store-details">
+                <p><i class="fas fa-location-arrow"></i> RR Handicraft, Kathmandu, Nepal</p>
+                <p><i class="fas fa-clock"></i> Open: 07:00 AM - 10:00 PM</p>
             </div>
         </div>
-        
+
         <div class="footer">
-            <p>© 2026 RR Handicraft. All rights reserved. | <a href="#">Privacy Policy</a></p>
+            © 2026 RR HANDICRAFT. ALL RIGHTS RESERVED.
         </div>
     </div>
 
     <script>
-        // Add click effects to contact items
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('click', function() {
-                // Add a temporary "clicked" effect
-                this.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 150);
-            });
-        });
-        
-        // Add subtle floating animation to the card
-        const card = document.querySelector('.contact-card');
-        setInterval(() => {
-            card.style.transform = 'translateY(-3px)';
-            setTimeout(() => {
-                card.style.transform = 'translateY(0)';
-            }, 1500);
-        }, 3000);
-        
-        // Map fallback in case iframe doesn't load
-        const mapFrame = document.querySelector('.map-frame');
-        mapFrame.onerror = function() {
-            const mapContainer = document.querySelector('.map-container');
-            mapContainer.innerHTML = 
-                '<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#e2e8f0; color:#64748b; padding:20px; text-align:center;">' +
-                '<i class="fas fa-map" style="font-size:40px; margin-bottom:10px; color:#94a3b8;"></i>' +
-                '<p>Map Loading...</p>' +
-                '<p style="font-size:12px; margin-top:5px;">R R Handicraft, Kathmandu</p>' +
-                '</div>';
+        // Use JavaScript to load the map after the page is ready
+        window.onload = function() {
+            const mapBox = document.getElementById('map-box');
+            
+            // This is a standard Google Maps Embed for Kathmandu
+            // You can replace 'Kathmandu' with your exact coordinates or business name
+            const location = "R+R+Handicraft+Kathmandu+Nepal";
+            
+            mapBox.innerHTML = `
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.06125532351!2d85.30975437447275!3d27.715394925138334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19018eb12685%3A0x41ad6c81acc3e2ac!2sR%20R%20Handicraft!5e0!3m2!1sen!2snp!4v1768556716477!5m2!1sen!2snp" 
+                    allowfullscreen>
+                </iframe>
+            `;
+
+            /* NOTE: To use the specific Google Maps API, you usually need an API Key. 
+               As a FREE alternative that works immediately, I am using the standard Embed URL below:
+            */
+            mapBox.innerHTML = `
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.06125532351!2d85.30975437447275!3d27.715394925138334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19018eb12685%3A0x41ad6c81acc3e2ac!2sR%20R%20Handicraft!5e0!3m2!1sen!2snp!4v1768556716477!5m2!1sen!2snp" 
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            `;
         };
     </script>
 </body>
